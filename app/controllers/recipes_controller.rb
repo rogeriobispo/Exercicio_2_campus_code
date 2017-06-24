@@ -7,6 +7,7 @@ class RecipesController < ApplicationController
 
   def new
     @recipe = Recipe.new
+    @cuisines = Cuisine.all
   end
 
   def make_response
@@ -20,10 +21,11 @@ class RecipesController < ApplicationController
     redirect_to recipe_path(@recipe.id)
   end
 
+private
   def set_params
    @recipe.title =  params[:recipe][:title]
    @recipe.recipe_type = params[:recipe][:recipe_type]
-   @recipe.cuisine = params[:recipe][:cuisine]
+   @recipe.cuisine_id = params[:recipe][:cuisine_id]
    @recipe.difficulty = params[:recipe][:difficulty]
    @recipe.cook_time = params[:recipe][:cook_time]
    @recipe.ingredients = params[:recipe][:ingredients]
