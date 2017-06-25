@@ -7,11 +7,13 @@ class RecipesController < ApplicationController
   def new
     @recipe = Recipe.new
     @cuisines = Cuisine.all
+    @recipes_type = RecipeType.all
   end
 
   def create
     @recipe = Recipe.new
     @cuisines = Cuisine.all
+    @recipes_type = RecipeType.all
     set_params
     if  @recipe.save
       redirect_to recipe_path(@recipe.id)
@@ -24,7 +26,7 @@ class RecipesController < ApplicationController
 private
   def set_params
    @recipe.title =  params[:recipe][:title]
-   @recipe.recipe_type = params[:recipe][:recipe_type]
+   @recipe.recipe_type_id = params[:recipe][:recipe_type_id]
    @recipe.cuisine_id = params[:recipe][:cuisine_id]
    @recipe.difficulty = params[:recipe][:difficulty]
    @recipe.cook_time = params[:recipe][:cook_time]

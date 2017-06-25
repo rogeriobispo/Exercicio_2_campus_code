@@ -4,7 +4,7 @@
 <%end%>
   <% @cuisine.recipes.each do |recipe| %>
     <h1><%= recipe.title %></h1>
-     <li><%= recipe.recipe_type %>
+     <li><%= recipe.recipe_type.name %>
      <li><%= recipe.cuisine.name%>
      <li><%= recipe.difficulty %>
      <li><%= recipe.cook_time%> minutos
