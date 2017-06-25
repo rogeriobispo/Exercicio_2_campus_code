@@ -1,5 +1,4 @@
 class RecipesController < ApplicationController
-  before_action :make_response, only: [:show]
 
   def show
     @recipe = Recipe.find(params[:id])
@@ -8,10 +7,6 @@ class RecipesController < ApplicationController
   def new
     @recipe = Recipe.new
     @cuisines = Cuisine.all
-  end
-
-  def make_response
-    true
   end
 
   def create
