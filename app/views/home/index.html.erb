@@ -6,6 +6,7 @@
 <% @recipes.each do |recipe| %>
 <h1><%= link_to("#{recipe.title}", recipe_path(recipe.id))%> </h1>
     <ul>
+      <li><%= recipe.cuisine.name%>
       <li><%= recipe.recipe_type.name %>
       <li><%= recipe.difficulty %>difficulty
       <li><%=recipe.cook_time %> minutos
@@ -14,4 +15,8 @@
 
 <% @cuisines.each do |cuisine| %>
   <li><%= link_to("#{cuisine.name}", cuisine) %>
+<% end %>
+
+<% @recipes_type.each do |recipe_type| %>
+  <li><%= link_to("#{recipe_type.name}", recipe_type) %>
 <% end %>
