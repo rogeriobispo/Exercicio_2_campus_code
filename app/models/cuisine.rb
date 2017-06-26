@@ -1,4 +1,4 @@
 class Cuisine < ApplicationRecord
-  validates_presence_of :name, message: 'Você deve informar o nome da cozinha'
+  validates  :name, presence: true
   has_many :recipes
 end
