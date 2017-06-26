@@ -11,7 +11,6 @@ class RecipesController < ApplicationController
   end
 
   def update
-    byebug
     @recipe = Recipe.find(params[:id])
     @cuisines = Cuisine.all
     @recipes_type = RecipeType.all
