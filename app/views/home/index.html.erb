@@ -4,13 +4,7 @@
 <hr>
 <p>Bem-vindo ao maior livro de receitas online</p>
 <% @recipes.each do |recipe| %>
-<h1><%= link_to("#{recipe.title}", recipe_path(recipe.id))%> </h1>
-    <ul>
-      <li><%= recipe.cuisine.name%>
-      <li><%= recipe.recipe_type.name %>
-      <li><%= recipe.difficulty %>
-      <li><%=recipe.cook_time %> minutos
-    </ul>
+  <%= render recipe %>
 <%end%>
 
 <% @cuisines.each do |cuisine| %>
