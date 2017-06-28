@@ -1,12 +1,16 @@
-<h1>CookBook</h1>
-<hr>
-  <%= link_to("Enviar uma receita", new_recipe_path)%>
+<div >CookBook</div>
+<ul>
+  <li><%= link_to("Enviar uma receita", new_recipe_path)%>
+   <li><%= link_to("Tipos de receitas") %>
+   <li><%= link_to("Cozinhas") %>
+</ul>
+
 <hr>
 <p>Bem-vindo ao maior livro de receitas online</p>
 <% @recipes.each do |recipe| %>
   <%= render recipe %>
 <%end%>
-
+<ul>
 <% @cuisines.each do |cuisine| %>
   <li><%= link_to("#{cuisine.name}", cuisine) %>
 <% end %>
@@ -14,3 +18,4 @@
 <% @recipes_type.each do |recipe_type| %>
   <li><%= link_to("#{recipe_type.name}", recipe_type) %>
 <% end %>
+</ul>
