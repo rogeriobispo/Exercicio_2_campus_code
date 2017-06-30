@@ -1,4 +1,3 @@
-<%= flash[:error]%>
 <%= form_for(@recipe) do |f| %>
   <%= render partial: 'form', locals: {acao: "Editar", f: f} %>
 <%end%>

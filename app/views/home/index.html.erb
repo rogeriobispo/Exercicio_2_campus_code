@@ -1,15 +1,31 @@
-<ul>
-<% @cuisines.each do |cuisine| %>
-  <li><%= link_to("#{cuisine.name}", cuisine) %>
-<% end %>
+<div class="row">
+  <div class="col-md-3 col-xs-12">
+    <aside>
+    <h1>Cozinhas</h1>
+    <ul>
+      <% @cuisines.each do |cuisine| %>
+        <li><%= link_to("#{cuisine.name}", cuisine) %>
+      <% end %>
+    </ul>
 
-<% @recipes_type.each do |recipe_type| %>
-  <li><%= link_to("#{recipe_type.name}", recipe_type) %>
-<% end %>
-</ul>
-
-<hr>
-<p>Bem-vindo ao maior livro de receitas online</p>
-<% @recipes.each do |recipe| %>
-  <%= render recipe %>
-<%end%>
+    <h1>Tipos</h1>
+    <ul>
+      <% @recipes_type.each do |recipe_type| %>
+        <li><%= link_to("#{recipe_type.name}", recipe_type) %>
+      <% end %>
+    </ul>
+    </aside>
+</div>
+<div class="col-md-9" col-xs-12>
+  <div class="row">
+    <main>
+      <% @recipes.each do |recipe| %>
+        <div class="col-md-6">
+          <%= render recipe %>
+        </div>
+      <%end%>
+    </main>
+  </div>
+  </div>
+</div>
+</div>
