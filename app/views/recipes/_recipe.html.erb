@@ -1,6 +1,8 @@
 <h1><%= link_to("#{recipe.title}", recipe_path(recipe.id))%> </h1>
-<p><h3><%= recipe.cuisine.name%></h3>
-<p><h3><%= recipe.recipe_type.name %></h3>
-<p><h3>  <%= recipe.difficulty %></h3>
-<p><h3><%=recipe.cook_time %> minutos<h3>
+<ul>
+  <li><%= recipe.cuisine.name%></h3>
+  <li><%= recipe.recipe_type.name %></h3>
+  <li>  <%= recipe.difficulty %></h3>
+  <li><%=recipe.cook_time %> minutos<h3>
+</ul>
 
