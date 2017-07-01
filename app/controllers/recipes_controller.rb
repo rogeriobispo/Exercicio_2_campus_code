@@ -23,6 +23,10 @@ class RecipesController < ApplicationController
   def edit
   end
 
+  def search
+
+  end
+
   def create
     @recipe = Recipe.new(recipe_params)
     if  @recipe.save

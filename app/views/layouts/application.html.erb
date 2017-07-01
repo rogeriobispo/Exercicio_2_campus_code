@@ -16,9 +16,15 @@
           <%= link_to("Enviar uma receita", new_recipe_path)%>
           <p>Bem-vindo ao maior livro de receitas online</p>
           <% if flash[:error] %>
-            <%= flash[:error] %>
+          <h1> <%= flash[:error] %></h1>
         <% end %>
       </header>
+      <%= form_tag(root_path, method: 'get', id: 'search-form') do %>
+        <%= label_tag 'Busca', 'Buscar Receitas' %>
+        <%= text_field_tag :search, "", placeholder: '*Buscar Receitas*',id: 'Busca' %>
+        <%= submit_tag 'Buscar', name: nil %>
+      <% end %>
+
       <%= yield %>
     </div>
   </body>
