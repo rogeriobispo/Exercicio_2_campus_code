@@ -2,6 +2,9 @@ class RecipesController < ApplicationController
   before_action :set_objects, only: [:new, :edit, :create, :update]
   before_action :find_recipe, only: [:show, :update, :edit]
 
+  def old
+    @recipe_olds = Recipe.all
+  end
   def show
   end
 

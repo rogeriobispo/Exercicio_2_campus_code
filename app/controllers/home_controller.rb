@@ -3,7 +3,7 @@ class HomeController < ApplicationController
     @recipes_type = RecipeType.all
     @cuisines = Cuisine.all
     if params[:search].blank?
-      @recipes = Recipe.all
+      @recipes = Recipe.last(6)
       flash[:error] = ""
     else
       @recipes = Recipe.search("%#{params[:search]}%").order("created_at DESC")
