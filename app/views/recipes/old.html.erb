@@ -1,3 +1,7 @@
+<%= render 'home/left_up' %>
 <% @recipe_olds.each do |recipe|%>
-  <%= render recipe %>
+<div class="col-md-6">
+    <%= render recipe %>
+  </div>
 <%end%>
+<%= render 'home/left_down' %>

@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="col-md-3 col-xs-12">
+    <aside>
+    <h1>Cozinhas</h1>
+    <ul>
+      <% @cuisines.each do |cuisine| %>
+        <li><%= link_to("#{cuisine.name}", cuisine) %>
+      <% end %>
+    </ul>
+
+    <h1>Tipos</h1>
+    <ul>
+      <% @recipes_type.each do |recipe_type| %>
+        <li><%= link_to("#{recipe_type.name}", recipe_type) %>
+      <% end %>
+    </ul>
+    </aside>
+</div>
+<div class="col-md-9" col-xs-12>
+  <div class="row">
+    <main>
