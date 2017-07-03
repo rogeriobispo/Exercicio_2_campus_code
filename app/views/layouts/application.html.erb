@@ -4,7 +4,6 @@
     <meta name='viewport' content="width=device-widht, initial-scale=1">
     <title>Cookbook</title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -14,16 +13,22 @@
       <header>
         <h1>CookBook</h1>
           <%= link_to("Enviar uma receita", new_recipe_path)%>
-          <p>Bem-vindo ao maior livro de receitas online</p>
+        <div class="row">
+          <div class="col-md-9">
+            <p>Bem-vindo ao maior livro de receitas online</p>
+          </div>
+          <div class="col-md-3">
+            <%= form_tag(root_path, method: 'get', id: 'search-form') do %>
+                <%= text_field_tag :search, "", placeholder: '*Buscar Receitas*',id: 'Busca' %>
+                <%= submit_tag 'Buscar', name: nil %>
+            <% end %>
+          </div>
+        </div>
           <% if flash[:error] %>
             <h1> <%= flash[:error] %></h1>
           <% end %>
       </header>
-      <%= form_tag(root_path, method: 'get', id: 'search-form') do %>
-        <%= label_tag 'Busca', 'Buscar Receitas' %>
-          <%= text_field_tag :search, "", placeholder: '*Buscar Receitas*',id: 'Busca' %>
-        <%= submit_tag 'Buscar', name: nil %>
-      <% end %>
+
       <%= yield %>
       <% link_to("Ver todas receitas",@recipe)%>
     </div>
