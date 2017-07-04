@@ -25,7 +25,9 @@ private
   end
 
   def find_recipe_type
-    @recipe_type = RecipeType.find(params[:id])
+    @recipes_type_default = RecipeType.find(params[:id])
+    @cuisines = Cuisine.all
+    @recipes_type = RecipeType.all
   end
 
 end
