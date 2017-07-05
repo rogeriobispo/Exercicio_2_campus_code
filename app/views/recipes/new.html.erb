@@ -1,3 +1,5 @@
+<h1>Nova Receita</h1>
+<%= render 'home/left_up' %>
 <%= form_for(@recipe) do |f| %>
   <%= f.label :title%>
   <%= f.text_field :title, id: 'Título'%><br>
@@ -15,3 +17,4 @@
   <%= f.text_field :method, id: 'Como Preparar'%><br>
   <%= f.submit "Enviar" %>
 <%end%>
+<%= render 'home/left_down' %>
