@@ -13,6 +13,9 @@
       <header>
         <h1>CookBook</h1>
           <%= link_to("Enviar uma receita", new_recipe_path)%>
+          <%= link_to("Ver todas receitas", recipes_olds_path)%>
+          <%= link_to('Home', root_path) %>
+
         <div class="row">
           <div class="col-md-9">
             <p>Bem-vindo ao maior livro de receitas online</p>
@@ -25,12 +28,11 @@
           </div>
         </div>
           <% if flash[:error] %>
-            <h1> <%= flash[:error] %></h1>
+            <h3> <%= flash[:error] %></h3>
           <% end %>
       </header>
 
       <%= yield %>
-      <% link_to("Ver todas receitas",@recipe)%>
     </div>
   </body>
   </div>

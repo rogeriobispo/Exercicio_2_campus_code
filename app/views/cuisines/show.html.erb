@@ -1,8 +1,12 @@
-<h1><%= @cuisine.name%></h1>
-<%if @cuisine.recipes.empty? %>
+<h1><%= @cuisine_default.name%></h1>
+<%if @cuisine_default.recipes.empty? %>
   Nenhuma receita encontrada para este tipo de cozinha
 <%end%>
- <% @cuisine.recipes.each do |recipe| %>
-  <%= render recipe%>
+<%= render 'home/left_up' %>
+ <% @cuisine_default.recipes.each do |recipe| %>
+  <div class="col-md-6">
+    <%= render recipe%>
+   </div>
 <%end%><br>
+<%= render 'home/left_down' %>
 <%= link_to('Voltar', root_path) %>
