@@ -1,3 +1,6 @@
+<h1>Editar receita</h1>
+<%= render 'home/left_up' %>
 <%= form_for(@recipe) do |f| %>
   <%= render partial: 'form', locals: {acao: "Editar", f: f} %>
 <%end%>
+<%= render 'home/left_down' %>
