@@ -10,28 +10,23 @@
 
   <body>
     <div class="container">
-      <header>
-
-
-
-
-         </button>
-  <nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" >CookBook</a>
-    </div>
-    <ul class="nav navbar-nav">
-      <li class="active"><%= link_to('Home', root_path) %></li>
-      <li><%= link_to("Nova receita", new_recipe_path)%> </li>
-      <li><%= link_to("Todas receitas", recipes_olds_path)%></li>
-    </ul>
-    <ul class="nav navbar-nav navbar-right">
-      <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-    </ul>
-  </div>
-</nav>
+       <header>
+        <nav class="navbar navbar-inverse">
+         <div class="container-fluid">
+           <div class="navbar-header">
+             <a class="navbar-brand" >CookBook</a>
+           </div>
+           <ul class="nav navbar-nav">
+             <li class="active"><%= link_to('Home', root_path) %></li>
+             <li><%= link_to("Nova receita", new_recipe_path)%> </li>
+             <li><%= link_to("Todas receitas", recipes_olds_path)%></li>
+           </ul>
+           <ul class="nav navbar-nav navbar-right">
+             <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+             <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+           </ul>
+        </div>
+        </nav>
         <div class="row">
           <div class="col-md-9">
             <p>Bem-vindo ao maior livro de receitas online</p>
@@ -46,9 +41,8 @@
           <% if flash[:error] %>
             <h3> <%= flash[:error] %></h3>
           <% end %>
-      </header>
-
-      <%= yield %>
+       </header>
+       <%= yield %>
     </div>
   </body>
   </div>
