@@ -42,7 +42,7 @@ feature 'Visitor view only recent recipes on home page' do
 
     # simula a ação do usuário
     visit root_path
-    click_on 'Ver todas receitas'
+    click_on 'Todas receitas'
 
     expect(page).to have_css('h1', text: recent_recipe.title)
     expect(page).to have_css('li', text: recent_recipe.recipe_type.name)

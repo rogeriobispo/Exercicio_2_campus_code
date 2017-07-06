@@ -9,7 +9,7 @@ feature 'Visitor register recipe' do
     RecipeType.create(name: 'Sobremesa')
     # simula a ação do usuário
     visit root_path
-    click_on 'Enviar uma receita'
+    click_on 'Nova receita'
 
     fill_in 'Título', with: 'Tabule'
     select 'Arabe', from: 'Cozinha'
@@ -38,7 +38,7 @@ feature 'Visitor register recipe' do
     Cuisine.create(name: 'Arabe')
     # simula a ação do usuário
     visit root_path
-    click_on 'Enviar uma receita'
+    click_on 'Nova receita'
 
     fill_in 'Título', with: ''
     fill_in 'Dificuldade', with: ''
