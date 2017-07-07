@@ -3,6 +3,6 @@ Rails.application.routes.draw do
   root to: 'home#index'
   get 'recipes/olds', to: 'recipes#old', as: 'recipes_olds'
   resources :recipes, only: [:show, :new, :create, :edit, :update]
-  resources :cuisines, only: [:show, :new, :create]
+  resources :cuisines, only: [:show, :new, :create, :edit, :update]
   resources :recipe_types, only: [:show, :new, :create ]
 end

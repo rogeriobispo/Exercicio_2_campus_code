@@ -1,6 +1,20 @@
 class CuisinesController < ApplicationController
 
   before_action :find_cuisine, only: [:show]
+  def edit
+    @cuisine = Cuisine.find(params[:id])
+  end
+
+  def update
+    @cuisine = Cuisine.create(cuisine_params)
+    if @cuisine.valid?
+      redirect_to @cuisine
+    else
+      flash[:error] = 'Cozinha deve ter um nome'
+      render :edit
+    end
+  end
+
   def new
     @cuisine = Cuisine.new
   end
