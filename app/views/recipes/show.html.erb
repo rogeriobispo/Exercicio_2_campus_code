@@ -1,15 +1,21 @@
 <h1>Detalhes</h1>
 <%= render 'home/left_up' %>
-<h1> <%= @recipe.title%></h1>
-<p><%= @recipe.recipe_type.name%></p>
-<p><%= @recipe.cuisine.name%></p>
-<p><%= @recipe.difficulty%></p>
-<p><%= @recipe.cook_time%> minutos</p>
-<p><%= @recipe.difficulty %></p>
-<h3>Ingredientes</h3>
-<p><%= @recipe.ingredients%></p>
-<h3>Como Preparar<h3>
-<p><%= @recipe.method%></p>
+   <h1> <%= @recipe.title%></h1>
+     <ul>
+       <li><p><%= @recipe.recipe_type.name%></p>
+       <li> <p><%= @recipe.cuisine.name%></p>
+       <li> <p><%= @recipe.difficulty%></p>
+       <li><p><%= @recipe.cook_time%> minutos</p>
+       <li> <p><%= @recipe.difficulty %></p>
+     </ul>
+   <h3>Ingredientes</h3>
+   <ul>
+     <li> <p><%= @recipe.ingredients%></p>
+   </ul>
+   <h3>Como Preparar<h3>
+   <ul>
+     <li><p><%= @recipe.method%></p>
+    </ul>
 <%= link_to('Voltar', root_path) %>
 <%= link_to('Editar', edit_recipe_path(@recipe.id)) %>
 <%= render 'home/left_down' %>
