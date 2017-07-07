@@ -27,4 +27,17 @@ feature 'user update cuisine' do
     expect(page).to have_css('h3', 'Cozinha deve ter um nome')
   end
 
+  scenario 'must be uniq' do
+    cuisine  = Cuisine.create(name: 'Brasileira')
+    cuisine2 = Cuisine.create(name: 'Argentina')
+
+    visit root_path
+    click_on 'Argentina'
+    click_on 'Nova Cozinha'
+
+    fill_in 'Nome', with: 'Brasileira'
+    click_on 'Enviar'
+    expect(page).to have_css('h3', 'Ja existe uma cozinha com este nome')
+
+  end
 end
