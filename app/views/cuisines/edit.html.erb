@@ -1,3 +1,6 @@
+<h1>Cozinha</h1>
+<%= render 'home/left_up' %>
 <%= form_for(@cuisine) do |f| %>
  <%= render partial: 'form', locals: {acao: "Editar", f: f} %>
 <% end %>
+<%= render 'home/left_down' %>

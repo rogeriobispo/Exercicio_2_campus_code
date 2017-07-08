@@ -1,0 +1,8 @@
+<h1>Cozinhas</h1>
+<%= render 'home/left_up' %>
+<% @cuisines.each do |cuisine|%>
+  <div class="col-md-6">
+      <%= link_to cuisine.name, edit_cuisine_path(cuisine.id) %><br>
+  </div>
+<%end%>
+<%= render 'home/left_down' %>

@@ -4,8 +4,14 @@ feature 'Visitor view only recent recipes on home page' do
 
   scenario 'successfully' do
     #cria os dados necessários
-    old_recipe = create_recipe('Old Recipe')
-    5.times { create_recipe('Another Recipes') }
+    old_recipe = create_recipe('Old Recipe','old_cuisine','old_tipo')
+    [
+      ['Cozinha_1','Tipo_1'],
+      ['Cozinha_2','Tipo_2'],
+      ['Cozinha_3','Tipo_3'],
+      ['Cozinha_4','Tipo_4'],
+      ['Cozinha_5','Tipo_5']
+    ].each{|model| create_recipe('Another Recipes',model[0] , model[1]) }
 
     cuisine = Cuisine.create(name: 'Brasileira')
     recipe_type = RecipeType.create(name: 'Sobremesa')
@@ -29,8 +35,15 @@ feature 'Visitor view only recent recipes on home page' do
 
   scenario 'and then view all the recipes' do
     #cria os dados necessários
-    old_recipe = create_recipe('Old Recipe')
-    6.times { create_recipe('Another Recipes') }
+    old_recipe = create_recipe('Old Recipe','old_cuisine','old_tipo')
+    [
+      ['Cozinha_1','Tipo_1'],
+      ['Cozinha_2','Tipo_2'],
+      ['Cozinha_3','Tipo_3'],
+      ['Cozinha_4','Tipo_4'],
+      ['Cozinha_5','Tipo_5'],
+      ['Cozinha_6','Tipo_6'],
+    ].each{|model| create_recipe('Another Recipes',model[0] , model[1]) }
 
     cuisine = Cuisine.create(name: 'Brasileira')
     recipe_type = RecipeType.create(name: 'Sobremesa')
@@ -60,15 +73,14 @@ feature 'Visitor view only recent recipes on home page' do
   end
 
 
-  def create_recipe(recipe_name)
-    generic_cuisine = Cuisine.create(name: 'Generic Cuisine')
-    generic_type = RecipeType.create(name: 'Generic Recipe Type')
+  def create_recipe(recipe_name,cuisine_name,recipe_type_name)
+    generic_cuisine = Cuisine.create(name: cuisine_name)
+    generic_type = RecipeType.create(name: recipe_type_name)
     Recipe.create(title: recipe_name, recipe_type: generic_type,
                   cuisine: generic_cuisine, difficulty: 'Facil',
                   ingredients: 'Ingredientes em lista',
                   method: 'Passo a passo do preparo',
                   cook_time: 60)
-
   end
 
 end

@@ -3,12 +3,12 @@
     <aside>
     <h1>Cozinhas</h1>
       <% @cuisines.each do |cuisine| %>
-        <p><%= link_to("#{cuisine.name}", cuisine) %>
+        <p><%= link_to("#{cuisine.recipes.count} - #{cuisine.name}", cuisine)%>
       <% end %>
 
     <h1>Tipos</h1>
       <% @recipes_type.each do |recipe_type| %>
-        <p><%= link_to("#{recipe_type.name}", recipe_type) %>
+        <p><%= link_to("#{recipe_type.recipes.count} - #{recipe_type.name}" , recipe_type) %>
       <% end %>
     </aside>
 </div>
