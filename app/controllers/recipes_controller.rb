@@ -3,7 +3,7 @@ class RecipesController < ApplicationController
   before_action :find_recipe, only: [:show, :update, :edit]
     before_action :authenticate_user!, only: [:edit, :new]
 
-  def old
+  def olds
     @recipe_olds = Recipe.all
   end
   def show

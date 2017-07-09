@@ -2,8 +2,12 @@ Rails.application.routes.draw do
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: 'home#index'
-  get 'recipes/olds', to: 'recipes#old', as: 'recipes_olds'
-  resources :recipes, only: [:show, :new, :create, :edit, :update]
+  #get 'recipes/olds', to: 'recipes#old', as: 'recipes_olds'
+  resources :recipes, only: [:show, :new, :create, :edit, :update] do
+    collection do
+      get 'olds'
+    end
+  end
   resources :cuisines, only: [:show, :new, :create, :edit, :update] do
     collection do
       get 'list'
