@@ -30,7 +30,7 @@ feature 'user update cuisine' do
     fill_in 'Nome', with: ''
     click_on 'Enviar'
 
-    expect(page).to have_css('h3', text: 'Você deve informar o nome da cozinha')
+    expect(page).to have_content('Você deve informar o nome da cozinha')
   end
 
   scenario 'must be uniq' do
@@ -41,7 +41,7 @@ feature 'user update cuisine' do
     visit new_cuisine_path
     fill_in 'Nome', with: 'Brasileira'
     click_on 'Enviar'
-    expect(page).to have_css('h3', text: 'Cozinha ja existe')
+    expect(page).to have_content('Cozinha ja existe')
 
   end
 end

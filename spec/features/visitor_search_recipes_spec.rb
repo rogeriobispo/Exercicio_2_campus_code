@@ -25,7 +25,7 @@ feature 'Visitor search for recipes' do
     click_on 'Buscar'
 
     # expectativas do usuário após a ação
-    expect(page).to have_css('h3', text: 'Resultado da busca por: Bolo de cenoura')
+    expect(page).to have_content('Resultado da busca por: Bolo de cenoura')
     expect(page).to have_css('h1', text: recipe.title)
     expect(page).to have_css('li', text: recipe.recipe_type.name)
     expect(page).to have_css('li', text: recipe.cuisine.name)

@@ -1,12 +1,12 @@
 <div class="row">
   <div class="col-md-3 col-xs-12">
     <aside>
-    <h1>Cozinhas</h1>
+    <h3>Cozinhas</h3>
       <% Cuisine.all.each do |cuisine| %>
         <p><%= link_to("#{cuisine.recipes.count} - #{cuisine.name}", cuisine)%>
       <% end %>
 
-    <h1>Tipos</h1>
+    <h3>Tipos</h3>
       <% RecipeType.all.each do |recipe_type| %>
         <p><%= link_to("#{recipe_type.recipes.count} - #{recipe_type.name}" , recipe_type) %>
       <% end %>
