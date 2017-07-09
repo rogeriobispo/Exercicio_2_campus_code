@@ -5,6 +5,7 @@ feature 'User update recipe' do
     #cria os dados necessários
     arabian_cuisine = Cuisine.create(name: 'Arabe')
     brazilian_cuisine = Cuisine.create(name: 'Brasileira')
+    user = User.create(email: 'rogerio.bispo@yahoo.com.br',password: '123456')
 
     appetizer_type = RecipeType.create(name: 'Entrada')
     main_type = RecipeType.create(name: 'Prato Principal')
@@ -18,6 +19,7 @@ feature 'User update recipe' do
 
     # simula a ação do usuário
     visit root_path
+    login_as(user, :scope => :user)
     click_on 'Bolodecenoura'
     click_on 'Editar'
 
@@ -45,6 +47,7 @@ feature 'User update recipe' do
     #cria os dados necessários, nesse caso não vamos criar dados no banco
     arabian_cuisine = Cuisine.create(name: 'Arabe')
     brazilian_cuisine = Cuisine.create(name: 'Brasileira')
+    user = User.create(email: 'rogerio.bispo@yahoo.com.br',password: '123456')
 
     appetizer_type = RecipeType.create(name: 'Entrada')
     main_type = RecipeType.create(name: 'Prato Principal')
@@ -58,6 +61,7 @@ feature 'User update recipe' do
 
     # simula a ação do usuário
     visit root_path
+    login_as(user, :scope => :user)
     click_on 'Bolodecenoura'
     click_on 'Editar'
 

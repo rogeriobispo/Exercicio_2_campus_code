@@ -23,8 +23,16 @@
              <li><%= link_to("Todas receitas", recipes_olds_path)%></li>
            </ul>
            <ul class="nav navbar-nav navbar-right">
-             <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-             <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+             <li><%= link_to( new_user_registration_path) do %>
+              <span class="glyphicon glyphicon-user"></span>Registrar
+             <% end %></li>
+             <li><%= link_to(new_user_session_path) do %>
+              <span class="glyphicon glyphicon-log-in"></span>Logar
+             <% end %></li>
+             <li><%= link_to(destroy_user_session_path, method: :delete) do %>
+              <span class="glyphicon glyphicon-log-out"></span>Sair
+             <% end %></li>
+
            </ul>
         </div>
         </nav>
@@ -44,6 +52,8 @@
           <% end %>
        </header>
        <%= yield %>
+       <p class="notice"><%= notice %></p>
+       <p class="alert"><%= alert %></p>
     </div>
   </body>
   </div>

@@ -1,6 +1,7 @@
 class RecipesController < ApplicationController
   before_action :set_objects, only: [:new, :edit, :create, :update, :old, :show]
   before_action :find_recipe, only: [:show, :update, :edit]
+    before_action :authenticate_user!, only: [:edit, :new]
 
   def old
     @recipe_olds = Recipe.all

@@ -3,8 +3,10 @@ require 'rails_helper'
 feature 'user update cuisine' do
   scenario 'successfully' do
     Cuisine.create(name: 'Arabiana')
+    user = User.create(email: 'rogerio.bispo@yahoo.com.br',password: '123456')
 
     visit root_path
+    login_as(user, :scope => :user)
     click_on 'Cozinhas'
     click_on 'Arabiana'
 
@@ -17,8 +19,10 @@ feature 'user update cuisine' do
 
   scenario 'cant be empty' do
     Cuisine.create(name: 'Brasileira')
+    user = User.create(email: 'rogerio.bispo@yahoo.com.br',password: '123456')
 
     visit root_path
+    login_as(user, :scope => :user)
     click_on 'Cozinhas'
     click_on 'Brasileira'
 
@@ -32,7 +36,8 @@ feature 'user update cuisine' do
   scenario 'must be uniq' do
     Cuisine.create(name: 'Brasileira')
     Cuisine.create(name: 'Argentina')
-
+    user = User.create(email: 'rogerio.bispo@yahoo.com.br',password: '123456')
+    login_as(user, :scope => :user)
     visit new_cuisine_path
     fill_in 'Nome', with: 'Brasileira'
     click_on 'Enviar'

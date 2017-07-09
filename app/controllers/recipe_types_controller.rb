@@ -1,6 +1,7 @@
 class RecipeTypesController < ApplicationController
 
   before_action :find_recipe_type, only: [:show]
+    before_action :authenticate_user!, only: [:new]
 
   def show
   end

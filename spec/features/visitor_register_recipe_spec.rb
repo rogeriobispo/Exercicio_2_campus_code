@@ -7,8 +7,10 @@ feature 'Visitor register recipe' do
     RecipeType.create(name: 'Entrada')
     RecipeType.create(name: 'Prato Principal')
     RecipeType.create(name: 'Sobremesa')
+    user = User.create(email: 'rogerio.bispo@yahoo.com.br',password: '123456')
     # simula a ação do usuário
     visit root_path
+    login_as(user, :scope => :user)
     click_on 'Nova receita'
 
     fill_in 'Título', with: 'Tabule'
@@ -37,6 +39,8 @@ feature 'Visitor register recipe' do
     #cria os dados necessários, nesse caso não vamos criar dados no banco
     Cuisine.create(name: 'Arabe')
     # simula a ação do usuário
+    user = User.create(email: 'rogerio.bispo@yahoo.com.br',password: '123456')
+    login_as(user, :scope => :user)
     visit root_path
     click_on 'Nova receita'
 

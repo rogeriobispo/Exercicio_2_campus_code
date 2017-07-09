@@ -2,6 +2,7 @@ class CuisinesController < ApplicationController
 
   before_action :find_cuisine, only: [:show]
   before_action :populate_vars, only: [:show, :list, :edit, :update, :new, :create]
+  before_action :authenticate_user!, only: [:edit, :new]
 
   def edit
     @cuisine = Cuisine.find(params[:id])
