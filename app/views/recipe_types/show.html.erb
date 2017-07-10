@@ -1,7 +1,4 @@
 <h1><%= @recipes_type_default.name%></h1>
-<% if @recipes_type_default.recipes.empty?%>
-  Nenhuma receita encontrada para este tipo de receitas
-<%end%>
 <%= render 'home/left_up' %>
 <% @recipes_type_default.recipes.each do |recipe|%>
   <div class="col-md-6">

@@ -40,10 +40,10 @@
          <div class="col-md-3">
             <p>Bem-vindo ao maior livro de receitas online</p>
           </div>
-         <div class="col-md-6">
-            <center><%= notice %><%= alert %><%= flash[:error] %></center>
+         <div class="col-md-5" align="center">
+            <%= notice %><%= alert %><%= flash[:error] %>
           </div>
-         <div class="col-md-3" align="right">
+         <div class="col-md-4" align="right">
             <%= form_tag(root_path, method: 'get', id: 'search-form') do %>
                 <%= text_field_tag :search, "", placeholder: '*Buscar Receitas*',id: 'Busca' %>
                 <%= submit_tag 'Buscar', name: nil %>

@@ -37,6 +37,10 @@ class CuisinesController < ApplicationController
   end
 
   def show
+      flash[:error] = ''
+   if @cuisine_default.recipes.empty?
+     flash[:error] = 'Nenhuma receita encontrada para este tipo de cozinha'
+   end
   end
 
 private

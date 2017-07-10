@@ -4,6 +4,10 @@ class RecipeTypesController < ApplicationController
     before_action :authenticate_user!, only: [:new]
 
   def show
+     flash[:error] = '' #Achei muito zuado isso mas na view não estava limpando a mensagem na tela.
+    if @recipes_type_default.recipes.empty?
+      flash[:error] = 'Nenhuma receita encontrada para este tipo de receitas'
+    end
   end
 
   def new
