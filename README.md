@@ -1,24 +1,40 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Motivation
 
-Things you may want to cover:
+    Cook book to share and keep your delicious recipes
+    ![My cookbook](https://github.com/rogeriobispo/cookbook/blob/master/public/Captura%20de%20tela%20de%202018-03-05%2012-03-35.png)
 
-* Ruby version
+## Requiriments
+    * Ruby 2.4.0
+    * Rails 5.1.4
+    * Postgres 9.5
 
-* System dependencies
+## Optional
+    * docker
+    * docker-compose
 
-* Configuration
+## Setup
+    * git clone git@github.com:rogeriobispo/cookbook.git
+    * bundle install
+    * rails db:create
+    * rails db:migrate
+    * puma -C config/puma.rb
 
-* Database creation
+## Docker Setup
+    * docker-compose build
+    * docker-compose run --rm website bin/setup
+    * docker-compose up
 
-* Database initialization
+## Server up
+    * puma -C config/puma.rb
 
-* How to run the test suite
+## Database creation
+    * rails db:create
 
-* Services (job queues, cache servers, search engines, etc.)
+## Database Initialization
+    * rails db:create
+    * rails db:migrate
 
-* Deployment instructions
-
-* ...
+## How to run Test Suite
+    * rspec -fd
