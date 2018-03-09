@@ -4,9 +4,9 @@ class HomeController < ApplicationController
     @cuisines = Cuisine.all
     if params[:search].blank?
       @recipes = Recipe.last(6)
-      flash[:error] = ""
+      flash[:error] = ''
     else
-      @recipes = Recipe.search("%#{params[:search]}%").order("created_at DESC")
+      @recipes = Recipe.search("%#{params[:search]}%").order('created_at DESC')
       flash[:error] = "Resultado da busca por: #{params[:search]}"
     end
   end

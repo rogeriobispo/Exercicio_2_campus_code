@@ -2,8 +2,8 @@ require 'rails_helper'
 
 feature 'User register recipe_jype' do
   scenario 'successfully' do
-    user = User.create(email: 'rogerio.bispo@yahoo.com.br',password: '123456')
-    login_as(user, :scope => :user)
+    user = User.create(email: 'rogerio.bispo@yahoo.com.br', password: '123456')
+    login_as(user, scope: :user)
     visit new_recipe_type_path
     fill_in 'Nome', with: 'Sobremesa'
     click_on 'Enviar'
@@ -13,8 +13,8 @@ feature 'User register recipe_jype' do
   end
 
   scenario 'and must fill in name' do
-    user = User.create(email: 'rogerio.bispo@yahoo.com.br',password: '123456')
-    login_as(user, :scope => :user)
+    user = User.create(email: 'rogerio.bispo@yahoo.com.br', password: '123456')
+    login_as(user, scope: :user)
     visit new_recipe_type_path
     fill_in 'Nome', with: ''
     click_on 'Enviar'

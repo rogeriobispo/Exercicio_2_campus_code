@@ -1,51 +1,50 @@
 class RecipesController < ApplicationController
   before_action :set_objects, only: [:new, :edit, :create, :update, :old, :show]
   before_action :find_recipe, only: [:show, :update, :edit]
-    before_action :authenticate_user!, only: [:edit, :new]
+  before_action :authenticate_user!, only: [:edit, :new]
 
   def olds
     @recipe_olds = Recipe.all
   end
-  def show
-  end
+
+  def show; end
 
   def new
     @recipe = Recipe.new
   end
 
   def update
-    if  @recipe.update(recipe_params)
+    if @recipe.update(recipe_params)
       redirect_to @recipe
     else
-      flash[:error] = "Você deve informar todos os dados da receita"
+      flash[:error] = 'Você deve informar todos os dados da receita'
       @cuisines = Cuisine.all
       @recipes_type = RecipeType.all
       render :edit
     end
   end
 
-  def edit
-  end
+  def edit; end
 
-  def search
-
-  end
+  def search; end
 
   def create
     @recipe = Recipe.new(recipe_params)
-    if  @recipe.save
+    if @recipe.save
       redirect_to @recipe
     else
-      flash[:error] = "Você deve informar todos os dados da receita"
+      flash[:error] = 'Você deve informar todos os dados da receita'
       render :new
     end
   end
 
-private
+  private
+
   def recipe_params
-    params.require(:recipe).permit(:title,:cook_time, :ingredients,
-    :recipe_type_id, :cuisine_id, :difficulty, :cookt_time, :igredients,
-    :method, :recipe_type_id)
+    params.require(:recipe).permit(:title, :cook_time, :ingredients,
+                                   :recipe_type_id, :cuisine_id,
+                                   :difficulty, :cookt_time, :igredients,
+                                   :method, :recipe_type_id)
   end
 
   def set_objects
@@ -56,5 +55,4 @@ private
   def find_recipe
     @recipe = Recipe.find(params[:id])
   end
-
 end
